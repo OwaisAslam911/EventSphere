@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, createContext, useContext } from "react";
+import { Routes, Route } from "react-router";
+import "./App.css";
+import Home from "./Pages/Attendee/Home";
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
+import Users from "./Pages/Admin/Users";
+import Settings from "./Pages/Admin/Settings";
+import AdminLayout from "./Layouts/AdminLayout";
+import Events from "./Pages/Admin/Events";
+import DeactivatedUsers from "./Pages/Admin/DeactivatedUsers";
+
+export const ThemeContext = createContext();
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {/* Apply global theme class */}
+      <div className={`app-container theme-${theme}`}>
+        <Routes>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="users" element={<Users />} />
+            <Route path="events" element={<Events />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="deactivatedUsers" element={<DeactivatedUsers />} />
+          </Route>
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeContext.Provider>
+  );
 }
 
-export default App
+export default App;
