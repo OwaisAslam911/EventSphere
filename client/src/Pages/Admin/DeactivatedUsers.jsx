@@ -1,6 +1,7 @@
 // src/pages/DeactivatedUsers.jsx
 import React, { useState } from "react";
 import { FaTrash, FaCheckCircle } from "react-icons/fa";
+import './pagecss.css'
 
 const DeactivatedUsers = () => {
   // Only deactivated users
@@ -28,7 +29,7 @@ const DeactivatedUsers = () => {
       <h2 className="fw-bold mb-4">Deactivated Users</h2>
 
       {/* Table */}
-      <div className="card shadow-sm card-app">
+     <div className="card-app p-3">
         <div className="card-body">
           <h5 className="mb-3">Inactive Accounts</h5>
 

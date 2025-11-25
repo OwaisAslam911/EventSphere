@@ -1,18 +1,4 @@
 
-.profileBtn {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  color: var(--bs-body-color) !important;
-  padding: 0.25rem !important;
-}
-.profileBtn:hover,
-.profileBtn:focus {
-  opacity: 0.8;
-}
-.profileBtn::after { display: none; }
-
 /* Theme Switch */
 .themeSwitchWrapper {
   display: flex;
@@ -84,35 +70,24 @@ input:checked + .slider .modeText {
   left: 12px;
   color: #ddd;
 }
-
-.admin-sidebar {
+.organizer-sidebar {
   width: 240px;
   min-height: 100vh;
   transition: transform 0.3s ease;
-  backdrop-filter: blur(10px);
-  /* box-shadow: var(--app-shadow); */
-  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 20px rgba(0,0,0,0.1);
 }
 
-/* Hide on mobile */
 @media (max-width: 991px) {
-  .admin-sidebar {
+  .organizer-sidebar {
     position: fixed;
     top: 0;
     left: 0;
     background: var(--sidebar-color);
     z-index: 2000;
     transform: translateX(-100%);
-    /* backdrop-filter: blur(10px); */
-    background-repeat: no-repeat;
   }
 
-  .admin-sidebar.open {
+  .organizer-sidebar.open {
     transform: translateX(0);
-  }
-
-  .close-btn {
-    cursor: pointer;
-    font-size: 20px;
   }
 }

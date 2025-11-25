@@ -8,6 +8,10 @@ import Settings from "./Pages/Admin/Settings";
 import AdminLayout from "./Layouts/AdminLayout";
 import Events from "./Pages/Admin/Events";
 import DeactivatedUsers from "./Pages/Admin/DeactivatedUsers";
+import OrganizerLayout from "./Layouts/OrganizerLayout";
+import OrganizerDashboard from "./Pages/Organizer/OrganizerDashboard";
+import AttendeesList from "./Pages/Organizer/AttendeesList";
+import MyEventList from "./Pages/Organizer/MyEventList";
 
 export const ThemeContext = createContext();
 
@@ -29,6 +33,13 @@ function App() {
             <Route path="events" element={<Events />} />
             <Route path="settings" element={<Settings />} />
             <Route path="deactivatedUsers" element={<DeactivatedUsers />} />
+          </Route>
+          <Route path="/organizer" element={<OrganizerLayout />}>
+            <Route index element={<OrganizerDashboard />} />
+            <Route path="attendeesList" element={<AttendeesList />} />
+            <Route path="myEvents" element={<MyEventList />} />
+            {/* <Route path="settings" element={<Settings />} />
+            <Route path="deactivatedUsers" element={<DeactivatedUsers />} /> */}
           </Route>
         </Routes>
       </div>

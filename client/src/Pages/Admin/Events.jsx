@@ -50,12 +50,13 @@ const Events = () => {
     setUsers(users.filter(u => u.id !== id));
   };
 
-  return (
+ return (
     <div>
-      <h2 className="fw-bold mb-4">Event Management</h2>
+      <h2 className="fw-bold mb-4">User Management</h2>
 
       {/* === REGISTRATION FORM === */}
-      <div className="card shadow-sm card-app p-4 mb-5">
+      {/* <div className="card shadow-sm card-app p-4 mb-5"> */}
+      <div className="card-app p-4 mb-5">
         <h5 className="mb-3 d-flex align-items-center">
           <FaUserPlus className="me-2" />
           {editingId ? "Edit User" : "Register New User"}
@@ -68,7 +69,7 @@ const Events = () => {
               <input
                 type="text"
                 name="name"
-                className="form-control"
+                className="form-control glass-input text-app"
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -80,16 +81,16 @@ const Events = () => {
               <input
                 type="email"
                 name="email"
-                className="form-control"
+                className="form-control glass-input text-app"
                 value={form.email}
                 onChange={handleChange}
                 required
-                placeholder="admin@example.com"
+                placeholder="user@example.com"
               />
             </div>
             <div className="col-md-6">
               <label className="form-label">Role</label>
-              <select name="role" className="form-select" value={form.role} onChange={handleChange}>
+              <select name="role" className="form-select glass-input text-app" value={form.role} onChange={handleChange}>
                 <option value="Attendee">Attendee</option>
                 <option value="Moderator">Moderator</option>
                 <option value="Admin">Admin</option>
@@ -97,14 +98,14 @@ const Events = () => {
             </div>
             <div className="col-md-6">
               <label className="form-label">Status</label>
-              <select name="status" className="form-select" value={form.status} onChange={handleChange}>
-                <option value="Active">Active</option>
+              <select name="status" className="form-select glass-input text-app" value={form.status} onChange={handleChange}>
+                <option className="glass-input-options" value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
             </div>
             <div className="col-12">
               <button type="submit" className="btn btn-primary me-2">
-                {editingId ? "Update Event" : "Add Event"}
+                {editingId ? "Update User" : "Add User"}
               </button>
               {editingId && (
                 <button
@@ -124,7 +125,7 @@ const Events = () => {
       </div>
 
       {/* === USERS TABLE === */}
-      <div className="card shadow-sm card-app">
+      <div className="card-app p-3">
         <div className="card-body">
           <h5 className="mb-3">All Users</h5>
           {users.length === 0 ? (
@@ -134,7 +135,7 @@ const Events = () => {
               <table className="table table-hover align-middle">
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th className="td">Name</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th>Status</th>

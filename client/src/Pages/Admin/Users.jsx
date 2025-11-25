@@ -1,16 +1,6 @@
-// import React from 'react'
-
-// const Users = () => {
-//   return (
-//     <div>Users</div>
-//   )
-// }
-
-// export default Users
-// src/pages/Users.jsx
-// src/pages/Users.jsx
 import React, { useState } from "react";
 import { FaUserPlus, FaTrash, FaEdit } from "react-icons/fa";
+import './pagecss.css'
 
 const Users = () => {
   const [users, setUsers] = useState([
@@ -56,7 +46,8 @@ const Users = () => {
       <h2 className="fw-bold mb-4">User Management</h2>
 
       {/* === REGISTRATION FORM === */}
-      <div className="card shadow-sm card-app p-4 mb-5">
+      {/* <div className="card shadow-sm card-app p-4 mb-5"> */}
+      <div className="card-app p-4 mb-5">
         <h5 className="mb-3 d-flex align-items-center">
           <FaUserPlus className="me-2" />
           {editingId ? "Edit User" : "Register New User"}
@@ -69,7 +60,7 @@ const Users = () => {
               <input
                 type="text"
                 name="name"
-                className="form-control"
+                className="form-control glass-input text-app"
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -81,7 +72,7 @@ const Users = () => {
               <input
                 type="email"
                 name="email"
-                className="form-control"
+                className="form-control glass-input text-app"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -90,7 +81,7 @@ const Users = () => {
             </div>
             <div className="col-md-6">
               <label className="form-label">Role</label>
-              <select name="role" className="form-select" value={form.role} onChange={handleChange}>
+              <select name="role" className="form-select glass-input text-app" value={form.role} onChange={handleChange}>
                 <option value="Attendee">Attendee</option>
                 <option value="Moderator">Moderator</option>
                 <option value="Admin">Admin</option>
@@ -98,8 +89,8 @@ const Users = () => {
             </div>
             <div className="col-md-6">
               <label className="form-label">Status</label>
-              <select name="status" className="form-select" value={form.status} onChange={handleChange}>
-                <option value="Active">Active</option>
+              <select name="status" className="form-select glass-input text-app" value={form.status} onChange={handleChange}>
+                <option className="glass-input-options" value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
             </div>
@@ -125,7 +116,7 @@ const Users = () => {
       </div>
 
       {/* === USERS TABLE === */}
-      <div className="card shadow-sm card-app">
+      <div className="card-app p-3">
         <div className="card-body">
           <h5 className="mb-3">All Users</h5>
           {users.length === 0 ? (
@@ -135,7 +126,7 @@ const Users = () => {
               <table className="table table-hover align-middle">
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th className="td">Name</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th>Status</th>

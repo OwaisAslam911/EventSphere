@@ -1,48 +1,4 @@
-// // src/context/ThemeContext.jsx
-// import React, { createContext, useContext, useEffect, useState } from 'react';
 
-// const ThemeContext = createContext();
-
-// export const ThemeProvider = ({ children }) => {
-//   const [theme, setTheme] = useState('light');
-
-//   // Always sync with OS preference on mount AND on change
-//   useEffect(() => {
-//     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-//     const updateTheme = () => {
-//       const systemTheme = mediaQuery.matches ? 'dark' : 'light';
-//       setTheme(systemTheme);
-//       document.documentElement.setAttribute('data-bs-theme', systemTheme);
-//     };
-
-//     // Initial set
-//     updateTheme();
-
-//     // Listen for OS changes
-//     mediaQuery.addEventListener('change', updateTheme);
-
-//     return () => mediaQuery.removeEventListener('change', updateTheme);
-//   }, []);
-
-//   const toggleTheme = () => {
-//     const newTheme = theme === 'light' ? 'dark' : 'light';
-//     setTheme(newTheme);
-//     document.documentElement.setAttribute('data-bs-theme', newTheme);
-//   };
-
-//   return (
-//     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-//       {children}
-//     </ThemeContext.Provider>
-//   );
-// };
-
-// export const useTheme = () => {
-//   const ctx = useContext(ThemeContext);
-//   if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
-//   return ctx;
-// };// src/context/ThemeContext.jsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();

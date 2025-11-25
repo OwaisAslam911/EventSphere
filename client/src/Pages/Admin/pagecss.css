@@ -1,0 +1,63 @@
+/* dashboard start */
+/* Chart container background transparency */
+.recharts-wrapper {
+  background: transparent !important;
+}
+
+.recharts-surface {
+  background: transparent !important;
+}
+
+/* Chart text colors */
+.recharts-text {
+  fill: var(--app-text) !important;
+  opacity: 0.8;
+}
+
+.recharts-legend-item-text {
+  color: var(--app-text) !important;
+}
+
+/* Pie chart labels */
+.recharts-pie-label-text {
+  fill: var(--app-text) !important;
+  font-weight: 500;
+}
+
+/* Grid lines */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--app-border) !important;
+  opacity: 0.3;
+}
+/* dashboard end */
+.table {
+  --bs-table-bg: transparent !important;
+  background: transparent !important;
+  color: var(--app-text) !important;
+  backdrop-filter: blur(10px);
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px);
+}
+
+.table tbody tr {
+  background: transparent !important;
+  border-bottom: 1px solid var(--app-border) !important;
+}
+
+.table td,
+.table th {
+  background: transparent !important;
+  border: none !important;
+  padding: 12px 8px;
+}
+
+.table thead th {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(10px);
+  border: none !important;
+  border-bottom: 2px solid var(--app-border) !important;
+}
