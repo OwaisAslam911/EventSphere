@@ -1,8 +1,8 @@
 // src/pages/DeactivatedUsers.jsx
 import React, { useState } from "react";
 import { FaTrash, FaCheckCircle } from "react-icons/fa";
-import './pagecss.css'
-
+// import '../pagecss.css'
+import '../pagecss.css'
 const DeactivatedUsers = () => {
   // Only deactivated users
   const [deactivatedUsers, setDeactivatedUsers] = useState([

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaUserPlus, FaTrash, FaEdit } from "react-icons/fa";
-import './pagecss.css'
+import '../pagecss.css'
 
 const Users = () => {
   const [users, setUsers] = useState([

@@ -12,7 +12,12 @@ import OrganizerLayout from "./Layouts/OrganizerLayout";
 import OrganizerDashboard from "./Pages/Organizer/OrganizerDashboard";
 import AttendeesList from "./Pages/Organizer/AttendeesList";
 import MyEventList from "./Pages/Organizer/MyEventList";
-
+import AttendeeLayout from "./Layouts/AttendeeLayout";
+import AllEvents from "./Pages/Attendee/AllEvents";
+import MyBookings from "./Pages/Attendee/MyBookings";
+import MyProfile from "./Pages/Attendee/MyProfile";
+import AboutUs from "./Pages/Attendee/AboutUs";
+import Contact from "./Pages/Attendee/Contact";
 export const ThemeContext = createContext();
 
 function App() {
@@ -27,6 +32,14 @@ function App() {
       {/* Apply global theme class */}
       <div className={`app-container theme-${theme}`}>
         <Routes>
+           <Route path="/" element={<AttendeeLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="contact" element={<Contact />} />
+             <Route path="events" element={<AllEvents />} />
+            <Route path="bookings" element={<MyBookings />} />
+            <Route path="profile" element={<MyProfile />} />
+          </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="users" element={<Users />} />
