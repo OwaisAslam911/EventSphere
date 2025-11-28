@@ -19,7 +19,7 @@ const Home = () => {
       
       <div className="row mt-5">
         <div className="col-md-4">
-          <div className="card-app p-4">
+          <div className="card-app p-4 mb-sm-2">
             <div className="card-body">
               <h5 className="card-title">Upcoming Events</h5>
               <p className="card-text">Find events happening near you.</p>
@@ -27,7 +27,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="card-app p-4">
+          <div className="card-app p-4 mb-sm-2">
             <div className="card-body">
               <h5 className="card-title">Easy Booking</h5>
               <p className="card-text">Book tickets in just a few clicks.</p>
@@ -35,7 +35,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="card-app p-4">
+          <div className="card-app p-4 mb-sm-2">
             <div className="card-body">
               <h5 className="card-title">Manage Bookings</h5>
               <p className="card-text">View and manage all your bookings in one place.</p>

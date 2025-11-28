@@ -18,6 +18,9 @@ import MyBookings from "./Pages/Attendee/MyBookings";
 import MyProfile from "./Pages/Attendee/MyProfile";
 import AboutUs from "./Pages/Attendee/AboutUs";
 import Contact from "./Pages/Attendee/Contact";
+import AuthLayout from "./layouts/AuthLayout";
+import Login from "./pages/auth/Login";
+import Signup from "./Pages/Auth/signup";
 export const ThemeContext = createContext();
 
 function App() {
@@ -37,8 +40,12 @@ function App() {
             <Route path="about" element={<AboutUs />} />
             <Route path="contact" element={<Contact />} />
              <Route path="events" element={<AllEvents />} />
-            <Route path="bookings" element={<MyBookings />} />
+            <Route path="myBookings" element={<MyBookings />} />
             <Route path="profile" element={<MyProfile />} />
+          </Route>
+          <Route path="/auth" element={<AuthLayout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
